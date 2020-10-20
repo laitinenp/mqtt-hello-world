@@ -1,9 +1,14 @@
-var mqtt = require('mqtt')
-var client = mqtt.connect('mqtt://localhost')
+const mqtt = require('mqtt')
+const client = mqtt.connect('mqtt://localhost')
+const readline = require('readline-sync')
+var topic = 'default-topic'
+
+var input = readline.question('Please enter your topic of interest (' + topic + '): ')
+if (input != "") topic = input
+
+var message = readline.question('Your message: ')
 
 client.on('connect', function() {
-    setInterval(function () {
-		client.publish('topikki','Hello MQTT')
-		console.log('Msg sent now.')
-	}, 5000)
+	client.publish(topic, message)
+	console.log('Message \"' + message + '\" sent to topic ' + topic + '.')
 })
