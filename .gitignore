@@ -1,3 +1,7 @@
+# tls certificate files (P. Laitinen 5.11.2024)
+cert.pem
+key.pem
+
 # Logs
 logs
 *.log
