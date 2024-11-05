@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mosca": "^2.8.3",
+    "aedes": "^0.51.3",
+    "mqtt": "^5.10.1",
     "readline-sync": "^1.4.10"
   }
 }

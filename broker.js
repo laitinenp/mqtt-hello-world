@@ -1,8 +1,9 @@
-var mosca = require('mosca')
-var settings = {port:1883}
+// Create a MQTT server on port 1883
 
-var server = new mosca.Server(settings)
+const aedes = require('aedes')()
+const server = require('net').createServer(aedes.handle)
+const port = 1883
 
-server.on('ready', function() {
-    console.log('MQTT server ready')
+server.listen(port, function () {
+  console.log('server started and listening on port ', port)
 })
