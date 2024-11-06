@@ -1,7 +1,7 @@
 const mqtt = require('mqtt')
 const client = mqtt.connect('mqtt://localhost')
 const readline = require('readline-sync')
-var topic = 'default-topic'
+var topic = 'default/topic/etc'
 
 var input = readline.question('Please enter your topic of interest (' + topic + '): ')
 if (input != "") topic = input
